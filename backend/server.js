@@ -1,5 +1,6 @@
 const express = require('express')
 const dotenv = require ('dotenv').config()
+const {errorHandler} = require('./middleware/errormiddleware')
 const port= process.env.PORT || 5000  //allows me to acces the port in .env
 
 
@@ -14,6 +15,6 @@ app.use('/api/goals', require('./routes/goalRoutes'))  //it will reffer to the g
 //})   //get request we want to listen to ; 
 
 
-
+app.use(errorHandler)
 
 app.listen(port, () => console.log(` Server started on port ${port}`)) 
