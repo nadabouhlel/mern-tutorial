@@ -1,0 +1,3 @@
+#to initialise a git repo but to ignore the node modules and .env file
+node_modules
+.env
